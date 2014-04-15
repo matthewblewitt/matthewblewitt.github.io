@@ -1,7 +1,64 @@
-// Temporary Navigation
+// Setup Navigation
+var links = new Array();
 $("h2").each(function(index, value) {
     if ($(this).children("a").attr("href") != undefined) {
-        $("#main_navigation").append("<li><a href='" + $(this).children("a").attr("href") + "'>" + $(this).children("a").attr("href") + "</li>");
+        var elementLink = $(this).children("a").attr("href").replace('#', '');
+        // $("#main_navigation").append("<li><a href='" + $(this).children("a").attr("href") + "'>" + elementLink + "</li>");
+        links.push(elementLink)
+    }
+});
+
+
+var mainNav = '';
+$(".section-element").each(function(index, value) {
+    var sectionID = $(this).attr('id');
+    //get all child elements
+    mainNav += '<li>' + sectionID + '<ul class="sub-nav">';
+    $(this).children('section').each(function(index, value) {
+        var elementLink = $(this).children('h2').children("a").attr("href");
+
+        mainNav += '<li><a href="' + elementLink + '">' + elementLink.replace('#', '') + '</a></li>';
+    });
+    mainNav += '</ul></li>';
+});
+
+$("#main_navigation").append(mainNav); //append to header
+// . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+
+$('.nav li').bind("click", function() {
+    var thisSubNav = $(this).children(".sub-nav");
+    thisSubNav.toggle(300);
+    $(".sub-nav").not(thisSubNav).hide(300);
+});
+
+
+// . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+//search the links and return match array
+function getWords(letters) {
+    //create new array of elements that match
+    if (letters.length >= 1) {
+        var matchArray = new Array();
+        for (var i = 0; i < links.length; i++) {
+            //check if string begins with letters
+            if (links[i].match("^" + $.trim(letters))) {
+                matchArray.push(links[i]);
+            }
+
+        }
+        return matchArray;
+    }
+}
+
+//Keyword search 
+$('input').on('input', function(e) {
+    $("#searchList").html(" ");
+    var matchArray = getWords($(this).val(), links);
+    var outputList = '<ul>';
+    for (var i = 0; i < matchArray.length; i++) {
+
+        $("#searchList").append('<li><a href="#' + matchArray[i] + '">' + matchArray[i] + '</a></li>');
     }
 });
 
@@ -55,7 +112,7 @@ $('pre').each(function() {
 
 //Smooth scroll effect
 $(function() {
-    $('a[href*=#]:not([href=#])').click(function() {
+    $('a[href*=#]:not([href=#])').bind("click", function() {
         $('.active-pattern').removeClass('active-pattern');
         var thisLink = $(this).attr("href");
         var targetSection = $("a[href='" + thisLink + "']").not($(this));
@@ -66,7 +123,7 @@ $(function() {
             if (target.length) {
                 $('html,body').animate({
                     scrollTop: target.offset().top
-                }, 1000, function() {
+                }, 500, function() {
                     // $('a[href=]').parent('h2').addClass("active");
                 });
                 return false;
