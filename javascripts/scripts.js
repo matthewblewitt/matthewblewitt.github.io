@@ -108,11 +108,15 @@ $('pre').each(function() {
 
 })(jQuery);
 
+
+
 // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
 //Smooth scroll effect
 $(function() {
     $('a[href*=#]:not([href=#])').bind("click", function() {
+        var offsetTop = 0;
+
         $('.active-pattern').removeClass('active-pattern');
         var thisLink = $(this).attr("href");
         var targetSection = $("a[href='" + thisLink + "']").not($(this));
@@ -121,9 +125,14 @@ $(function() {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length) {
+                if ($(window).width() < 960) {
+                    offsetTop = 200;
+                }
                 $('html,body').animate({
-                    scrollTop: target.offset().top
+                    scrollTop: target.offset().top - offsetTop
                 }, 500, function() {
+                    $('.slicknav_nav').hide(200).addClass('slicknav_hidden');
+                    $('.slicknav_open').removeClass('slicknav_open').addClass('slicknav_collapsed');
                     // $('a[href=]').parent('h2').addClass("active");
                 });
                 return false;
