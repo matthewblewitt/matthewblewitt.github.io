@@ -130,6 +130,38 @@ section > h2{
   padding-top: 10px;
 }
 
+pre{
+  display: none;
+}
+
+.reveal-html{
+  padding: 10px;
+  border: 1px solid #cdcdcd;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 11px;
+  position: relative;
+
+}
+
+.reveal-html {
+  position: relative;
+}
+
+#example-checkbox {
+  display: none;
+}
+
+.reveal-html.show:after {
+  content: "Hide HTML";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 0;
+  bottom: 0;
+  background: white;
+}
+
 small {
   font-size:11px;
 }
