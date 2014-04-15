@@ -114,7 +114,20 @@ strong {
 section {
   width:500px;
   float:right;
+  padding: 20px;
   padding-bottom:50px;
+  -webkit-transition: background-color 500ms ease-out 1s;
+  -moz-transition: background-color 500ms ease-out 1s;
+  -o-transition: background-color 500ms ease-out 1s;
+  transition: background-color 500ms ease-out 1s;
+}
+
+section.active-pattern{
+/*  background: #cdcdcd;
+*/}
+
+section > h2{
+  padding-top: 10px;
 }
 
 small {
@@ -203,5 +216,32 @@ footer {
     padding:0.4in;
     font-size:12pt;
     color:#444;
+  }
+}
+
+/*ACCORDION*/ 
+.accordion {
+   margin: 0px;   
+   dt, dd {
+      padding: 10px;
+      border: 1px solid black;
+      border-bottom: 0; 
+      &:last-of-type {
+        border-bottom: 1px solid black; 
+      }
+      a {
+        display: block;
+        color: black;
+        font-weight: bold;
+      }
+   }
+  dd {
+     border-top: 0; 
+     font-size: 12px;
+     &:last-of-type {
+       border-top: 1px solid white;
+       position: relative;
+       top: -1px;
+     }
   }
 }
