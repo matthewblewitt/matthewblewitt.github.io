@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 
 body {
-  padding:0 50px;
+  padding:20px 50px 0 50px;
   font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#777;
   font-weight:300;
@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, ul, ol, table, pre, dl {
-  margin:0 0 20px;
+  //margin:0 0 20px;
 }
 
 h1, h2, h3 {
@@ -106,7 +106,7 @@ header {
   height: 100%;
 }
 
-.nav{
+.nav--side{
   list-style: none;
   margin: 0;
   padding: 0;
@@ -119,7 +119,7 @@ header {
   padding: 1px;
 }*/
 
-.nav li{
+.nav--side li{
   cursor: pointer;
   text-transform:capitalize
 }

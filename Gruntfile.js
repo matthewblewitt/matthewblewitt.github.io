@@ -59,7 +59,7 @@ module.exports = function(grunt) {
 
       css: {
         //directory path and it's subdirectories,
-        files: ['css/**/*.scss'],
+        files: ['css/**/**/*.scss'],
         tasks: ['sass', 'autoprefixer'],
         options: {
           spawn: false,
@@ -67,25 +67,25 @@ module.exports = function(grunt) {
       },
 
       images: {
-        files: ['img/**/*.{png,jpg,gif}', 'img/*.{png,jpg,gif}'],
-        tasks: ['img'],
+        files: ['images/**/*.{png,jpg,gif}'],
+        tasks: ['images'],
         options: {
           spawn: false,
         }
       },
 
-      // html:{
-      //   files: ['./**/*.html'],
-      //   tasks: [],
-      //   options: {
-      //     spawn: false
-      //   }
-      // }
+      html:{
+        files: ['./**/*.html'],
+        tasks: [],
+        options: {
+          spawn: false
+        }
+      }
     },
 
     server: {
       options: {
-        port: 8000,      
+        port: 4000,      
         base: './'
       }
     },
