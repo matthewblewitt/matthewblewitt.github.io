@@ -17,7 +17,7 @@
       <header>
         <h1>Pattern Library</h1>
         <div id="searchForm">
-          <input type="text" placeholder="keyword search" name="keyword"/><br /><br />
+          <input type="text" placeholder="keyword search" name="keyword" id="searchLinks"/><br /><br />
           <ul id="searchList"></ul>
         </div>
         <ul id="main_navigation" class="nav">
@@ -162,17 +162,17 @@
         </section>
         <section class="pattern">
           <h2><a name="link" class="anchor" href="#link"><span class="octicon octicon-link"></span></a>Link</h2>
-          <div class="html-snippet"><p><a href="#">Link</a></div>
+          <div class="html-snippet"><p><a href="#" title="Some info about the destination">Link</a></div>
         </section>
         <section class="pattern">
           <h2><a name="external-link" class="anchor" href="#external-link"><span class="octicon octicon-link"></span></a>External Link</h2>
           <div class="html-snippet">
-            <p><a href="#" rel="external">External link</a></p>
+            <p><a href="#" rel="external" title="Some info about the destination">External link</a></p>
           </div>
         </section>
         <section class="pattern">
           <h2><a name="link-button" class="anchor" href="#link-button"><span class="octicon octicon-link"></span></a>Link Button</h2>
-          <div class="html-snippet"><p><a href="#" class="button">Link Button</a></div>
+          <div class="html-snippet"><p><a href="#" class="button" title="Some info about the destination">Link Button</a></div>
         </section>
       </div><!-- end #generalText -->
       <div id="tables" class="section-element">
@@ -180,7 +180,7 @@
           <h2><a name="tabular-data" class="anchor" href="#tabular-data"><span class="octicon octicon-link"></span></a>Tabular Data</h2>
           <div class="html-snippet">
             <table>
-              <caption>The Very Best Eggnog</caption>
+              <caption>Table 1.1 shows: The Very Best Eggnog</caption>
               <colgroup>
                 <col style="width:50%">
                 <col style="width:25%">

@@ -3,11 +3,9 @@ var links = new Array();
 $("h2").each(function(index, value) {
     if ($(this).children("a").attr("href") != undefined) {
         var elementLink = $(this).children("a").attr("href").replace('#', '');
-        // $("#main_navigation").append("<li><a href='" + $(this).children("a").attr("href") + "'>" + elementLink + "</li>");
         links.push(elementLink)
     }
 });
-
 
 var mainNav = '';
 $(".section-element").each(function(index, value) {
@@ -15,18 +13,18 @@ $(".section-element").each(function(index, value) {
     //get all child elements
     mainNav += '<li>' + sectionID + '<ul class="sub-nav">';
     $(this).children('section').each(function(index, value) {
-        var elementLink = $(this).children('h2').children("a").attr("href");
-
+        var elementLink = $(this).find('h2 > a').attr("href");
         mainNav += '<li><a href="' + elementLink + '">' + elementLink.replace('#', '') + '</a></li>';
     });
     mainNav += '</ul></li>';
 });
 
 $("#main_navigation").append(mainNav); //append to header
+
 // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-
-$('.nav li').bind("click", function() {
+var $navLi = $('.nav li');
+$navLi.bind("click", function() {
     var thisSubNav = $(this).children(".sub-nav");
     thisSubNav.toggle(300);
     $(".sub-nav").not(thisSubNav).hide(300);
@@ -45,19 +43,18 @@ function getWords(letters) {
             if (links[i].match("^" + $.trim(letters))) {
                 matchArray.push(links[i]);
             }
-
         }
         return matchArray;
     }
 }
 
 //Keyword search 
-$('input').on('input', function(e) {
-    $("#searchList").html(" ");
-    var matchArray = getWords($(this).val(), links);
+var $searchLinks = $('#searchLinks');
+$searchLinks.on('input', function(e) {
+    $("#searchList li").detach(); //clear the previous list
+    var matchArray = getWords($(this).val(), links); //get array of matches
     var outputList = '<ul>';
     for (var i = 0; i < matchArray.length; i++) {
-
         $("#searchList").append('<li><a href="#' + matchArray[i] + '">' + matchArray[i] + '</a></li>');
     }
 });
@@ -77,11 +74,11 @@ $(function() {
 $('.html-snippet').each(function() {
     var thisText = $(this).html();
     $(this).append('<pre>' + $.trim(thisText) + '</pre><div class="reveal-html">Show HTML</div>');
-
 });
 
 //Show/Hide snippets
-$('.reveal-html').bind("click", function() {
+var $revealHTML = $('.reveal-html');
+$revealHTML.bind("click", function() {
     $(this).toggleClass("show").prev("pre").toggle(200);
 });
 
@@ -94,7 +91,6 @@ $('pre').each(function() {
 
 //Simple accordion
 (function($) {
-
     var allPanels = $('.accordion > dd').hide();
 
     $('.accordion > dt > a').click(function() {
@@ -104,8 +100,6 @@ $('pre').each(function() {
     });
 
     $('.tooltip').tooltipster();
-
-
 })(jQuery);
 
 
@@ -116,7 +110,6 @@ $('pre').each(function() {
 $(function() {
     $('a[href*=#]:not([href=#])').bind("click", function() {
         var offsetTop = 0;
-
         $('.active-pattern').removeClass('active-pattern');
         var thisLink = $(this).attr("href");
         var targetSection = $("a[href='" + thisLink + "']").not($(this));
