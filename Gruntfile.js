@@ -25,13 +25,23 @@ module.exports = function(grunt) {
       all: 'js/*.js'
     },
 
-    sass: {
-      dist: {
-        options: {
-          style: 'nested'
-        },
-        files: {
-          'css/main.css': 'css/main.scss'
+    // sass: {
+    //   dist: {
+    //     options: {
+    //       style: 'nested'
+    //     },
+    //     files: {
+    //       'css/main.css': 'css/main.scss'
+    //     }
+    //   }
+    // },
+
+    compass: {                  // Task
+      dist: {                   // Target
+        options: {              // Target options
+          sassDir: 'css/',
+          cssDir: 'css/',
+          environment: 'production'
         }
       }
     },
@@ -60,7 +70,7 @@ module.exports = function(grunt) {
       css: {
         //directory path and it's subdirectories,
         files: ['css/**/**/*.scss'],
-        tasks: ['sass', 'autoprefixer'],
+        tasks: ['compass', 'autoprefixer'],
         options: {
           spawn: false,
         }
@@ -95,7 +105,8 @@ module.exports = function(grunt) {
   // Load the plugin(s).
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  //grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
@@ -104,7 +115,8 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'imagemin',
     //'jshint',
-    'sass',
+    //'sass',
+    'compass',
     'autoprefixer',
     'watch',
     'connect'
