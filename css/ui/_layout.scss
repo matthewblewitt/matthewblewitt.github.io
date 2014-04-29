@@ -1,0 +1,38 @@
+body {
+    
+    word-wrap: break-word;
+
+    @media print {
+        padding: 0.4in;
+        font-size: 12pt;
+        color: $font-color-dark;
+    }
+}
+
+.wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    @extend .cf;
+}
+
+.pattern-wrapper {
+    width: 66.666%;
+    float: right;
+
+    @include breakpoint(alpha){
+        float: none;
+        position: static;
+        width: auto;
+    }
+}
+
+.main {
+    @extend .cf;
+    @include breakpoint(alpha){
+        padding: $base-padding;
+        padding-top:180px;
+    }
+}
+
+
+

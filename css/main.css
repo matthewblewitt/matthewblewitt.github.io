@@ -39,19 +39,34 @@
  * Place any variables that should override inuit.css’ defaults here.
  */
 /**
+ * Base stuff
+ */
+/**
+ * Base font-family.
+ */
+/**
+ * Font-sizes (in pixels). Refer to relevant sections for their implementations.
+ */
+/**
  * Brand stuff
  */
 /**
- * Breakpoints start.
+ * How big would you like round corners to be by default?
  */
 /**
- * Typography
+ * Breakpoints start.
  */
 /*------------------------------------*\
     $CUSTOM
 \*------------------------------------*/
 /**
  * Place any of your own variables that sit on top of inuit.css here.
+ */
+/**
+ * Custom Colors
+ */
+/**
+ * Custom Breakpoints
  */
 /*------------------------------------*\
     INUIT.CSS
@@ -804,7 +819,7 @@ textarea:focus {
  * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
  * and over in your markup.
  */
-.cf:after, .nav:after, .media:after, .matrix:after, .multi-list:after {
+.cf:after, .nav:after, .media:after, .matrix:after, .multi-list:after, .wrapper:after, .main:after, .section-element:after {
   content: "";
   display: table;
   clear: both; }
@@ -830,8 +845,8 @@ pre,
 .media,
 .island,
 .islet {
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 20px;
+  margin-bottom: 1.42857rem; }
   .islet h1, .islet h2, .islet h3, .islet h4, .islet h5, .islet h6, .islet hgroup, .islet
   ul, .islet ol, .islet dl, .islet
   blockquote, .islet p, .islet address, .islet
@@ -841,31 +856,31 @@ pre,
   .media, .islet
   .island, .islet
   .islet {
-    margin-bottom: 12px;
-    margin-bottom: 0.75rem; }
+    margin-bottom: 10px;
+    margin-bottom: 0.71429rem; }
 
 /**
  * Doubled up `margin-bottom` helper class.
  */
 .landmark {
-  margin-bottom: 48px;
-  margin-bottom: 3rem; }
+  margin-bottom: 40px;
+  margin-bottom: 2.85714rem; }
 
 /**
  * `hr` elements only take up a few pixels, so we need to give them special
  * treatment regarding vertical rhythm.
  */
 hr {
-  margin-bottom: 22px;
-  margin-bottom: 1.375rem; }
+  margin-bottom: 18px;
+  margin-bottom: 1.28571rem; }
 
 /**
  * Where `margin-left` is concerned we want to try and indent certain elements
  * by a consistent amount. Define that amount once, here.
  */
 ul, ol, dd {
-  margin-left: 48px;
-  margin-left: 3rem; }
+  margin-left: 40px;
+  margin-left: 2.85714rem; }
 
 /**
  * Base styles; unclassed HTML elements etc.
@@ -874,7 +889,7 @@ ul, ol, dd {
     $MAIN
 \*------------------------------------*/
 html {
-  font: 1em/1.5 sans-serif;
+  font: 0.875em/1.42857 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow-y: scroll;
   min-height: 100%; }
 
@@ -890,33 +905,33 @@ html {
  */
 h1, .alpha {
   font-size: 36px;
-  font-size: 2.25rem;
-  line-height: 1.33333; }
+  font-size: 2.57143rem;
+  line-height: 1.11111; }
 
 h2, .beta {
   font-size: 22px;
-  font-size: 1.375rem;
-  line-height: 1.09091; }
+  font-size: 1.57143rem;
+  line-height: 1.81818; }
 
 h3, .gamma {
   font-size: 18px;
-  font-size: 1.125rem;
-  line-height: 1.33333; }
+  font-size: 1.28571rem;
+  line-height: 1.11111; }
 
 h4, .delta {
   font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5; }
+  font-size: 1.14286rem;
+  line-height: 1.25; }
 
 h5, .epsilon {
   font-size: 15px;
-  font-size: 0.9375rem;
-  line-height: 1.6; }
+  font-size: 1.07143rem;
+  line-height: 1.33333; }
 
 h6, .zeta {
   font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 1.71429; }
+  font-size: 1rem;
+  line-height: 1.42857; }
 
 /**
  * Heading groups and generic any-heading class.
@@ -937,18 +952,18 @@ hgroup .hN {
  */
 .giga {
   font-size: 96px;
-  font-size: 6rem;
-  line-height: 1; }
+  font-size: 6.85714rem;
+  line-height: 1.04167; }
 
 .mega {
   font-size: 72px;
-  font-size: 4.5rem;
-  line-height: 1; }
+  font-size: 5.14286rem;
+  line-height: 1.11111; }
 
 .kilo {
   font-size: 48px;
-  font-size: 3rem;
-  line-height: 1; }
+  font-size: 3.42857rem;
+  line-height: 1.25; }
 
 /*------------------------------------*\
     $PARAGRAPHS
@@ -959,9 +974,9 @@ hgroup .hN {
  */
 .lede,
 .lead {
-  font-size: 18px;
+  font-size: 15.75px;
   font-size: 1.125rem;
-  line-height: 1.33333; }
+  line-height: 1.26984; }
 
 /*------------------------------------*\
     $SMALLPRINT
@@ -972,13 +987,13 @@ hgroup .hN {
 .smallprint,
 .milli {
   font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 2; }
+  font-size: 0.85714rem;
+  line-height: 1.66667; }
 
 .micro {
   font-size: 10px;
-  font-size: 0.625rem;
-  line-height: 2.4; }
+  font-size: 0.71429rem;
+  line-height: 2; }
 
 /*------------------------------------*\
     $QUOTES
@@ -1135,25 +1150,25 @@ img[height] {
  * Rounded images.
  */
 .img--round {
-  border-radius: 2px; }
+  border-radius: 4px; }
 
 /**
  * Image placement variations.
  */
 .img--right {
   float: right;
-  margin-bottom: 24px;
-  margin-left: 24px; }
+  margin-bottom: 20px;
+  margin-left: 20px; }
 
 .img--left {
   float: left;
-  margin-right: 24px;
-  margin-bottom: 24px; }
+  margin-right: 20px;
+  margin-bottom: 20px; }
 
 .img--center {
   display: block;
   margin-right: auto;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   margin-left: auto; }
 
 /**
@@ -1163,13 +1178,13 @@ img[height] {
  * distort when resized below a certain width. Use with caution.
  */
 .img--short {
-  height: 120px; }
+  height: 100px; }
 
 .img--medium {
-  height: 240px; }
+  height: 200px; }
 
 .img--tall {
-  height: 360px; }
+  height: 300px; }
 
 /**
  * Images in `figure` elements.
@@ -1256,12 +1271,12 @@ table {
 
 th,
 td {
-  padding: 6px;
+  padding: 5px;
   text-align: left; }
   @media screen and (min-width: 480px) {
     th,
     td {
-      padding: 12px; } }
+      padding: 10px; } }
 
 /**
  * Cell alignments
@@ -1376,7 +1391,7 @@ td {
  */
 .table--bordered th,
 .table--bordered td {
-  border: 1px solid #cccccc; }
+  border: 1px solid silver; }
   .table--bordered th:empty,
   .table--bordered td:empty {
     border: none; }
@@ -1407,7 +1422,7 @@ td {
  *
  */
 fieldset {
-  padding: 24px; }
+  padding: 20px; }
 
 /**
  * Text inputs
@@ -1598,7 +1613,7 @@ label,
  * Grid wrapper
  */
 .grid {
-  margin-left: -24px;
+  margin-left: -20px;
   list-style: none;
   margin-bottom: 0; }
 
@@ -1614,7 +1629,7 @@ label,
 .grid__item {
   display: inline-block;
   width: 100%;
-  padding-left: 24px;
+  padding-left: 20px;
   vertical-align: top; }
 
 /*------------------------------------*\
@@ -1629,11 +1644,11 @@ label,
  *
  */
 .text-cols--2, .text-cols--3, .text-cols--4, .text-cols--5 {
-  -webkit-column-gap: 24px;
-  -moz-column-gap: 24px;
-  -ms-column-gap: 24px;
-  -o-column-gap: 24px;
-  column-gap: 24px; }
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  -ms-column-gap: 20px;
+  -o-column-gap: 20px;
+  column-gap: 20px; }
 
 .text-cols--2 {
   -webkit-column-count: 2;
@@ -1743,7 +1758,7 @@ label,
     letter-spacing: normal;
     word-spacing: normal; }
     .nav--block > li > a {
-      padding: 12px; }
+      padding: 10px; }
 
 /**
  * Force a nav to occupy 100% of the available width of its parent. Extends
@@ -1852,14 +1867,14 @@ label,
 
 .media__img {
   float: left;
-  margin-right: 24px; }
+  margin-right: 20px; }
 
 /**
  * Reversed image location (right instead of left).
  */
 .media__img--rev {
   float: right;
-  margin-left: 24px; }
+  margin-left: 20px; }
 
 .media__img img,
 .media__img--rev img {
@@ -1876,10 +1891,10 @@ label,
  * `.img`s in `.islet`s need an appropriately sized margin.
  */
 .islet .media__img {
-  margin-right: 12px; }
+  margin-right: 10px; }
 
 .islet .media__img--rev {
-  margin-left: 12px; }
+  margin-left: 10px; }
 
 /*------------------------------------*\
     $BLOCK-LIST
@@ -1902,7 +1917,7 @@ label,
 .block-list, .matrix,
 .block-list > li,
 .matrix > li {
-  border: 0 solid #cccccc; }
+  border: 0 solid silver; }
 
 .block-list, .matrix {
   list-style: none;
@@ -1910,12 +1925,12 @@ label,
   border-top-width: 1px; }
   .block-list > li, .matrix > li {
     border-bottom-width: 1px;
-    padding: 12px; }
+    padding: 10px; }
 
 .block-list__link, .matrix__link {
   display: block;
-  padding: 12px;
-  margin: -12px; }
+  padding: 10px;
+  margin: -10px; }
 
 /*------------------------------------*\
     $MATRIX
@@ -2114,7 +2129,7 @@ label,
  *
  */
 .icon-text > .icon-text__icon {
-  margin-right: 6px; }
+  margin-right: 5px; }
 
 /**
  * We can also reverse the direction of the margin for icons that appear to the
@@ -2126,7 +2141,7 @@ label,
  *
  */
 .icon-text--rev > .icon-text__icon {
-  margin-left: 6px; }
+  margin-left: 5px; }
 
 /*------------------------------------*\
     $BEAUTONS.CSS
@@ -2201,7 +2216,7 @@ label,
   /* [7] */
   padding-left: 1em;
   /* [7] */
-  border-radius: 2px;
+  border-radius: 4px;
   /* [8] */ }
 
 .btn, .btn:hover {
@@ -2331,12 +2346,12 @@ label,
  *
  */
 .rule {
-  color: #cccccc;
+  color: silver;
   border: none;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  margin-bottom: 23px;
-  margin-bottom: 1.4375rem; }
+  margin-bottom: 19px;
+  margin-bottom: 1.35714rem; }
 
 /**
  * Dotted rules
@@ -2499,7 +2514,7 @@ label,
  * Demo: jsfiddle.net/inuitcss/WS4Ge
  *
  */
-@media only screen and (max-width: 674px) {
+@media only screen and (max-width: 480px) {
   /**
   * Whole
   */
@@ -2598,7 +2613,7 @@ label,
 
   .palm-eleven-twelfths {
     width: 91.666%; } }
-@media only screen and (min-width: 675px) and (max-width: 959px) {
+@media only screen and (min-width: 481px) and (max-width: 719px) {
   /**
   * Whole
   */
@@ -2697,7 +2712,7 @@ label,
 
   .lap-eleven-twelfths {
     width: 91.666%; } }
-@media only screen and (min-width: 675px) {
+@media only screen and (min-width: 481px) {
   /**
   * Whole
   */
@@ -2796,7 +2811,7 @@ label,
 
   .lap-and-up-eleven-twelfths {
     width: 91.666%; } }
-@media only screen and (max-width: 959px) {
+@media only screen and (max-width: 719px) {
   /**
   * Whole
   */
@@ -2895,7 +2910,7 @@ label,
 
   .portable-eleven-twelfths {
     width: 91.666%; } }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 720px) {
   /**
   * Whole
   */
@@ -3020,15 +3035,15 @@ label,
  * any element using a handy helper class.
  */
 .brand {
-  font-family: "Helvetica Neue", sans-serif!important;
-  color: #4a8ec2!important; }
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+  color: #3399cc!important; }
 
 .brand-face {
-  font-family: "Helvetica Neue", sans-serif!important; }
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif!important; }
 
 .brand-color,
 .brand-colour {
-  color: #4a8ec2!important; }
+  color: #3399cc!important; }
 
 /*------------------------------------*\
     $HELPER
@@ -3082,50 +3097,50 @@ label,
  * Add/remove margins
  */
 .push {
-  margin: 24px !important; }
+  margin: 20px !important; }
 
 .push--top {
-  margin-top: 24px !important; }
+  margin-top: 20px !important; }
 
 .push--right {
-  margin-right: 24px !important; }
+  margin-right: 20px !important; }
 
 .push--bottom {
-  margin-bottom: 24px !important; }
+  margin-bottom: 20px !important; }
 
 .push--left {
-  margin-left: 24px !important; }
+  margin-left: 20px !important; }
 
 .push--ends {
-  margin-top: 24px !important;
-  margin-bottom: 24px !important; }
+  margin-top: 20px !important;
+  margin-bottom: 20px !important; }
 
 .push--sides {
-  margin-right: 24px !important;
-  margin-left: 24px !important; }
+  margin-right: 20px !important;
+  margin-left: 20px !important; }
 
 .push-half {
-  margin: 12px !important; }
+  margin: 10px !important; }
 
 .push-half--top {
-  margin-top: 12px !important; }
+  margin-top: 10px !important; }
 
 .push-half--right {
-  margin-right: 12px !important; }
+  margin-right: 10px !important; }
 
 .push-half--bottom {
-  margin-bottom: 12px !important; }
+  margin-bottom: 10px !important; }
 
 .push-half--left {
-  margin-left: 12px !important; }
+  margin-left: 10px !important; }
 
 .push-half--ends {
-  margin-top: 12px !important;
-  margin-bottom: 12px !important; }
+  margin-top: 10px !important;
+  margin-bottom: 10px !important; }
 
 .push-half--sides {
-  margin-right: 12px !important;
-  margin-left: 12px !important; }
+  margin-right: 10px !important;
+  margin-left: 10px !important; }
 
 .flush {
   margin: 0 !important; }
@@ -3154,50 +3169,50 @@ label,
  * Add/remove paddings
  */
 .soft {
-  padding: 24px !important; }
+  padding: 20px !important; }
 
 .soft--top {
-  padding-top: 24px !important; }
+  padding-top: 20px !important; }
 
 .soft--right {
-  padding-right: 24px !important; }
+  padding-right: 20px !important; }
 
 .soft--bottom {
-  padding-bottom: 24px !important; }
+  padding-bottom: 20px !important; }
 
 .soft--left {
-  padding-left: 24px !important; }
+  padding-left: 20px !important; }
 
 .soft--ends {
-  padding-top: 24px !important;
-  padding-bottom: 24px !important; }
+  padding-top: 20px !important;
+  padding-bottom: 20px !important; }
 
 .soft--sides {
-  padding-right: 24px !important;
-  padding-left: 24px !important; }
+  padding-right: 20px !important;
+  padding-left: 20px !important; }
 
 .soft-half {
-  padding: 12px !important; }
+  padding: 10px !important; }
 
 .soft-half--top {
-  padding-top: 12px !important; }
+  padding-top: 10px !important; }
 
 .soft-half--right {
-  padding-right: 12px !important; }
+  padding-right: 10px !important; }
 
 .soft-half--bottom {
-  padding-bottom: 12px !important; }
+  padding-bottom: 10px !important; }
 
 .soft-half--left {
-  padding-left: 12px !important; }
+  padding-left: 10px !important; }
 
 .soft-half--ends {
-  padding-top: 12px !important;
-  padding-bottom: 12px !important; }
+  padding-top: 10px !important;
+  padding-bottom: 10px !important; }
 
 .soft-half--sides {
-  padding-right: 12px !important;
-  padding-left: 12px !important; }
+  padding-right: 10px !important;
+  padding-left: 10px !important; }
 
 .hard {
   padding: 0 !important; }
@@ -3226,11 +3241,11 @@ label,
  * Pull items full width of `.island` parents.
  */
 .full-bleed {
-  margin-right: -24px !important;
-  margin-left: -24px !important; }
+  margin-right: -20px !important;
+  margin-left: -20px !important; }
   .islet .full-bleed {
-    margin-right: -12px !important;
-    margin-left: -12px !important; }
+    margin-right: -10px !important;
+    margin-left: -10px !important; }
 
 /**
  * Add a help cursor to any element that gives the user extra information on
@@ -3285,7 +3300,7 @@ label,
   position: absolute !important;
   width: 1px !important; }
 
-@media only screen and (max-width: 674px) {
+@media only screen and (max-width: 480px) {
   .accessibility--palm,
   .visuallyhidden--palm {
     border: 0 !important;
@@ -3296,7 +3311,7 @@ label,
     padding: 0 !important;
     position: absolute !important;
     width: 1px !important; } }
-@media only screen and (min-width: 675px) and (max-width: 959px) {
+@media only screen and (min-width: 481px) and (max-width: 719px) {
   .accessibility--lap,
   .visuallyhidden--lap {
     border: 0 !important;
@@ -3307,7 +3322,7 @@ label,
     padding: 0 !important;
     position: absolute !important;
     width: 1px !important; } }
-@media only screen and (min-width: 675px) {
+@media only screen and (min-width: 481px) {
   .accessibility--lap-and-up,
   .visuallyhidden--lap-and-up {
     border: 0 !important;
@@ -3318,7 +3333,7 @@ label,
     padding: 0 !important;
     position: absolute !important;
     width: 1px !important; } }
-@media only screen and (max-width: 959px) {
+@media only screen and (max-width: 719px) {
   .accessibility--portable,
   .visuallyhidden--portable {
     border: 0 !important;
@@ -3329,7 +3344,7 @@ label,
     padding: 0 !important;
     position: absolute !important;
     width: 1px !important; } }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 720px) {
   .accessibility--desk,
   .visuallyhidden--desk {
     border: 0 !important;
@@ -3340,7 +3355,7 @@ label,
     padding: 0 !important;
     position: absolute !important;
     width: 1px !important; } }
-@media only screen and (min-width: 1279px) {
+@media only screen and (min-width: 960px) {
   .accessibility--desk-wide,
   .visuallyhidden--desk-wide {
     border: 0 !important;
@@ -3355,6 +3370,281 @@ label,
 /**
  * She’s all yours, cap’n... Begin importing your stuff here.
  */
+body {
+  word-wrap: break-word; }
+  @media print {
+    body {
+      padding: 0.4in;
+      font-size: 12pt;
+      color: #222222; } }
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto; }
+
+.pattern-wrapper {
+  width: 66.666%;
+  float: right; }
+  @media (max-width: 960px) {
+    .pattern-wrapper {
+      float: none;
+      position: static;
+      width: auto; } }
+
+@media (max-width: 960px) {
+  .main {
+    padding: 20px;
+    padding-top: 180px; } }
+
+/* General Typography */
+body {
+  color: #777777; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #222222; }
+
+a {
+  color: #3399cc; }
+
+a small {
+  font-size: 11px;
+  color: #222222;
+  margin-top: -0.6em;
+  display: block; }
+
+blockquote {
+  border-left: 1px solid silver;
+  padding: 0 0 0 20px;
+  font-style: italic; }
+
+code, pre {
+  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+  color: #222222;
+  font-size: 12px; }
+  @media (max-width: 720px) {
+    code, pre {
+      word-wrap: normal; } }
+
+strong {
+  color: #222222;
+  font-weight: 700; }
+
+small {
+  font-size: 11px; }
+
+pre {
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 4px;
+  border: 1px solid silver;
+  overflow-x: auto; }
+
+pre {
+  display: none; }
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse; }
+
+th, td {
+  text-align: left;
+  padding: 5px 10px;
+  border-bottom: 1px solid silver; }
+
+dt {
+  color: #222222;
+  font-weight: 700; }
+
+th {
+  color: #222222; }
+
+/* Images */
+img {
+  max-width: 100%; }
+
+/*  */
+hr {
+  border: 0;
+  background: silver;
+  height: 1px;
+  margin: 0 0 20px; }
+
+/* Forms */
+input[type=text],
+input[type=password],
+input[type=email],
+textarea {
+  border: 1px solid silver;
+  padding: 6.66667px 10px; }
+  input[type=text]:focus,
+  input[type=password]:focus,
+  input[type=email]:focus,
+  textarea:focus {
+    border: 1px solid #bbbbbb;
+    outline: 2px solid #3399cc; }
+
+abbr[title] {
+  border-bottom: 0; }
+
+.site-header {
+  width: 33.333%;
+  float: left;
+  position: fixed;
+  height: 100%;
+  padding: 20px; }
+  @media (max-width: 960px) {
+    .site-header {
+      position: fixed;
+      background: #fefefe;
+      height: auto;
+      width: 100%;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      padding: 20px;
+      border-bottom: 1px solid silver; } }
+
+.logo {
+  color: #3399cc; }
+
+.site-footer {
+  width: 33.333%;
+  float: left;
+  position: fixed;
+  bottom: 50px; }
+  @media (max-width: 960px) {
+    .site-footer {
+      float: none;
+      position: static;
+      width: auto; } }
+
+.pattern {
+  border-bottom: 1px solid silver;
+  padding: 40px 0;
+  -webkit-transition: background-color 500ms ease-out 1s;
+  -moz-transition: background-color 500ms ease-out 1s;
+  -o-transition: background-color 500ms ease-out 1s;
+  transition: background-color 500ms ease-out 1s; }
+  @media (max-width: 960px) {
+    .pattern {
+      border-bottom: none; } }
+
+.reveal-html {
+  padding: 5px;
+  border: 1px solid silver;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 11px;
+  position: relative; }
+
+#example-checkbox {
+  display: none; }
+
+.reveal-html.show:after {
+  content: "Hide HTML";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 0;
+  bottom: 0;
+  background: #fefefe; }
+
+/* ACCORDION */
+.accordion {
+  margin: 0 0 20px 0; }
+  .accordion dt, .accordion dd {
+    padding: 10px;
+    border: 1px solid silver;
+    border-bottom: 0; }
+    .accordion dt:last-of-type, .accordion dd:last-of-type {
+      border-bottom: 1px solid silver; }
+    .accordion dt a, .accordion dd a {
+      display: block;
+      color: #777777;
+      font-weight: bold;
+      text-decoration: none; }
+  .accordion dd {
+    border-top: 0; }
+    .accordion dd:last-of-type {
+      border-top: 1px solid #fefefe;
+      position: relative;
+      top: -1px; }
+
+.demo {
+  box-shadow: 1px 1px 10px;
+  margin-top: 20px; }
+
+@media (max-width: 960px) {
+  .site-header ul {
+    display: none; } }
+@media (max-width: 480px) {
+  .site-header ul {
+    display: none; } }
+@media (max-width: 720px) {
+  .site-header ul {
+    position: static; } }
+
+@media (max-width: 720px) {
+  .site-header p.view {
+    position: static; } }
+
+.slicknav_menu {
+  display: none; }
+  @media (max-width: 960px) {
+    .slicknav_menu {
+      display: block; } }
+
+@media (max-width: 960px) {
+  .slicknav_nav {
+    list-style: none;
+    margin: 0;
+    padding: 0; } }
+
+.nav--side {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .nav--side li {
+    cursor: pointer;
+    text-transform: capitalize; }
+
+/*
+
+.nav li{
+  border-bottom: 1px solid #cdcdcd;
+  padding: 1px;
+}*/
+.sub-nav {
+  display: none;
+  margin: 0;
+  list-style: none;
+  margin: 0px;
+  padding: 0 0 0 0px; }
+  .sub-nav li a {
+    display: block;
+    width: 100%;
+    padding-left: 20px; }
+
+/* Visual Breakpoints 
+
+All the breakpoint info in one place to make it easier to look at
+
+palm - Less than 480px 
+lap - More than 480px less than 720px
+lap-and-up -  More than 480px
+portable - Less than 720px
+desk - More than 720px
+desk-wide - More than 960px
+
+$palm-end: $lap-start - 1px;
+$lap-end: $desk-start - 1px;
+
+$lap-start:         480px;
+$desk-start:        720px;
+$desk-wide-start:   960px;
+
+*/
 /*Start Tooltip*/
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {
@@ -8715,268 +9005,6 @@ label,
 
 /*end Syntax Highlighter
 */
-body {
-  padding: 20px 50px 0 50px;
-  font: 14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #777;
-  font-weight: 300; }
-
-h1, h2, h3, h4, h5, h6 {
-  color: #222;
-  margin: 0 0 20px; }
-
-h1, h2, h3 {
-  line-height: 1.1; }
-
-h1 {
-  font-size: 28px; }
-
-h2 {
-  color: #393939; }
-
-h3, h4, h5, h6 {
-  color: #494949; }
-
-a {
-  color: #39c;
-  font-weight: 400;
-  text-decoration: none; }
-
-a small {
-  font-size: 11px;
-  color: #777;
-  margin-top: -0.6em;
-  display: block; }
-
-.wrapper {
-  width: 860px;
-  margin: 0 auto; }
-
-.slicknav_menu {
-  display: none; }
-
-blockquote {
-  border-left: 1px solid #e5e5e5;
-  margin: 0;
-  padding: 0 0 0 20px;
-  font-style: italic; }
-
-code, pre {
-  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
-  color: #333;
-  font-size: 12px; }
-
-pre {
-  padding: 8px 15px;
-  background: #f8f8f8;
-  border-radius: 5px;
-  border: 1px solid #e5e5e5;
-  overflow-x: auto; }
-
-table {
-  width: 100%;
-  border-collapse: collapse; }
-
-th, td {
-  text-align: left;
-  padding: 5px 10px;
-  border-bottom: 1px solid #e5e5e5; }
-
-dt {
-  color: #444;
-  font-weight: 700; }
-
-th {
-  color: #444; }
-
-img {
-  max-width: 100%; }
-
-header {
-  width: 270px;
-  float: left;
-  position: fixed;
-  height: 100%; }
-
-.nav--side {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-
-/*
-
-.nav li{
-  border-bottom: 1px solid #cdcdcd;
-  padding: 1px;
-}*/
-.nav--side li {
-  cursor: pointer;
-  text-transform: capitalize; }
-
-.sub-nav {
-  display: none;
-  margin: 0;
-  list-style: none;
-  margin: 0px;
-  padding: 0 0 0 0px; }
-
-.sub-nav li a {
-  display: block;
-  width: 100%;
-  padding-left: 20px; }
-
-strong {
-  color: #222;
-  font-weight: 700; }
-
-section {
-  width: 500px;
-  float: right;
-  padding: 20px;
-  padding-bottom: 50px;
-  -webkit-transition: background-color 500ms ease-out 1s;
-  -moz-transition: background-color 500ms ease-out 1s;
-  -o-transition: background-color 500ms ease-out 1s;
-  transition: background-color 500ms ease-out 1s; }
-
-section.active-pattern {
-  /*  background: #cdcdcd;
-  */ }
-
-section > h2 {
-  padding-top: 10px; }
-
-pre {
-  display: none; }
-
-.reveal-html {
-  padding: 5px;
-  border: 1px solid #cdcdcd;
-  display: inline-block;
-  cursor: pointer;
-  font-size: 11px;
-  position: relative; }
-
-.reveal-html {
-  position: relative; }
-
-#example-checkbox {
-  display: none; }
-
-.reveal-html.show:after {
-  content: "Hide HTML";
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 0;
-  bottom: 0;
-  background: white; }
-
-small {
-  font-size: 11px; }
-
-hr {
-  border: 0;
-  background: #e5e5e5;
-  height: 1px;
-  margin: 0 0 20px; }
-
-footer {
-  width: 270px;
-  float: left;
-  position: fixed;
-  bottom: 50px; }
-
-@media print, screen and (max-width: 960px) {
-  div.wrapper {
-    width: auto;
-    margin: 0; }
-
-  .main_content {
-    padding: 150px 20px 20px 20px; }
-
-  header, section, footer {
-    float: none;
-    position: static;
-    width: auto; }
-
-  header {
-    position: fixed;
-    background: #fff;
-    height: auto;
-    width: 100%;
-    box-shadow: 1px 1px 10px;
-    z-index: 10;
-    left: 0;
-    top: 0;
-    padding: 20px; }
-
-  body {
-    padding: 0; }
-
-  section {
-    border-width: 1px 0;
-    padding: 20px 0;
-    margin: 0 0 20px; }
-
-  header ul {
-    display: none; }
-
-  .slicknav_nav {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-
-  .slicknav_menu {
-    display: block; } }
-@media print, screen and (max-width: 720px) {
-  body {
-    word-wrap: break-word; }
-
-  header {
-    padding: 20px; }
-
-  header ul, header p.view {
-    position: static; }
-
-  pre, code {
-    word-wrap: normal; } }
-@media print, screen and (max-width: 480px) {
-  body {
-    padding: 15px; }
-
-  header ul {
-    display: none; } }
-@media print {
-  body {
-    padding: 0.4in;
-    font-size: 12pt;
-    color: #444; } }
-/*ACCORDION*/
-.accordion {
-  margin: 0px; }
-  .accordion dt, .accordion dd {
-    padding: 10px;
-    border: 1px solid black;
-    border-bottom: 0; }
-    .accordion dt:last-of-type, .accordion dd:last-of-type {
-      border-bottom: 1px solid black; }
-    .accordion dt a, .accordion dd a {
-      display: block;
-      color: black;
-      font-weight: bold; }
-  .accordion dd {
-    border-top: 0;
-    font-size: 12px; }
-    .accordion dd:last-of-type {
-      border-top: 1px solid white;
-      position: relative;
-      top: -1px; }
-
-.demo {
-  box-shadow: 1px 1px 10px;
-  margin-top: 24px; }
-
 .highlight {
   background: #ffffff; }
 

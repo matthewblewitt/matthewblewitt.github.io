@@ -101,7 +101,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task(s).
-  grunt.registerTask('default', ['imagemin','jshint','sass','autoprefixer','watch','connect']);
+  grunt.registerTask('default', [
+    'imagemin',
+    //'jshint',
+    'sass',
+    'autoprefixer',
+    'watch',
+    'connect'
+  ]);
   // grunt.registerTask('dev', []); Look into DEV register task
 
 };

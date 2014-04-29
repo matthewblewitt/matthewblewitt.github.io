@@ -1,0 +1,70 @@
+.site-header ul {
+    @include breakpoint(alpha){
+        display: none;
+    }
+    @include breakpoint(gamma){
+        display: none;
+    }
+    @include breakpoint(beta){
+        position: static;
+    }
+}
+
+.site-header p.view {
+    @include breakpoint(beta){
+        position: static;
+    }
+}
+
+.slicknav_menu {
+    display: none;
+
+    @include breakpoint(alpha){
+        display: block;
+    }
+}
+
+.slicknav_nav {
+    @include breakpoint(alpha){
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.nav--side {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        cursor: pointer;
+        text-transform: capitalize;
+    }
+}
+
+/*
+
+.nav li{
+  border-bottom: 1px solid #cdcdcd;
+  padding: 1px;
+}*/
+
+
+.sub-nav {
+    display: none;
+    margin: 0;
+    list-style: none;
+    margin: 0px;
+    padding: 0 0 0 0px;
+
+    li a {
+        display: block;
+        width: 100%;
+        padding-left: 20px;
+    }
+
+}
+
+
+

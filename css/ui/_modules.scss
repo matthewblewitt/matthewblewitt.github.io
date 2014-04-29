@@ -1,0 +1,114 @@
+.site-header {
+    width: 33.333%;
+    float: left;
+    position: fixed;
+    height: 100%;
+    padding: $base-padding;
+
+    @include breakpoint(alpha){
+        position: fixed;
+        background: $ui-color-lighter;
+        height: auto;
+        width: 100%;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        padding: $base-padding;
+        border-bottom: 1px solid $ui-color;
+    }
+}
+
+.logo {
+    color:$brand-color;
+}
+
+.site-footer {
+    width: 33.333%;
+    float: left;
+    position: fixed;
+    bottom: 50px;
+    @include breakpoint(alpha){
+        float: none;
+        position: static;
+        width: auto;
+    }
+}
+
+.section-element {
+    @extend .cf;
+}
+
+.pattern {
+    border-bottom: 1px solid $ui-color;
+    padding: $base-padding*2 0;
+    -webkit-transition: background-color 500ms ease-out 1s;
+    -moz-transition: background-color 500ms ease-out 1s;
+    -o-transition: background-color 500ms ease-out 1s;
+    transition: background-color 500ms ease-out 1s;
+
+    &.active-pattern {}
+
+    @include breakpoint(alpha){
+        border-bottom: none;
+    }
+}
+
+.reveal-html {
+    padding: 5px;
+    border: 1px solid $ui-color;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 11px;
+    position: relative;
+}
+
+#example-checkbox {
+    display: none;
+}
+
+.reveal-html.show:after {
+    content: "Hide HTML";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 0;
+    bottom: 0;
+    background: $ui-color-lighter;
+}
+
+/* ACCORDION */ 
+
+.accordion {
+    margin: 0 0 $base-margin 0;
+
+    dt, dd {
+        padding: $base-padding/2;
+        border: 1px solid $ui-color;
+        border-bottom: 0;
+
+        &:last-of-type {
+            border-bottom: 1px solid $ui-color;
+        }
+
+        a {
+            display: block;
+            color: $font-color;;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    }
+
+    dd {
+        border-top: 0;
+        &:last-of-type {
+            border-top: 1px solid $ui-color-lighter;
+            position: relative;
+            top: -1px;
+        }
+    }
+}
+
+.demo {
+    box-shadow: 1px 1px 10px;
+    margin-top: $base-margin;
+}

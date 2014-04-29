@@ -23,9 +23,11 @@
  * She’s all yours, cap’n... Begin importing your stuff here.
  */
 
-@import "ui/example";
+@import "ui/layout";
+@import "ui/elements";
+@import "ui/modules";
+@import "ui/nav";
+@import "ui/shame";
 
 @import "ui/vendor";
-@import "ui/styles";
 @import "ui/pygment_trac";
-

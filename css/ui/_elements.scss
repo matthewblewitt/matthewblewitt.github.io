@@ -1,0 +1,115 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+
+/* General Typography */
+
+body {
+    color: $font-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $font-color-dark;
+}
+
+a {
+    color: $brand-color;
+}
+
+a small {
+    font-size: 11px;
+    color: $font-color-dark;
+    margin-top: -0.6em;
+    display: block;
+}
+
+blockquote {
+    border-left: 1px solid $ui-color;
+    padding: 0 0 0 $base-padding;
+    font-style: italic;
+}
+
+code, pre {
+    font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+    color: $font-color-dark;
+    font-size: 12px;
+
+    @include breakpoint(beta){
+        word-wrap: normal;
+    }
+}
+
+strong {
+    color: $font-color-dark;
+    font-weight: 700;
+}
+
+small {
+    font-size: 11px;
+}
+
+pre {
+    padding: $base-padding;
+    background: $ui-color-light;
+    border-radius: $brand-round;
+    border: 1px solid $base-ui-color;
+    overflow-x: auto;
+}
+
+pre {
+    display: none;
+}
+
+/* Tables */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 5px 10px;
+    border-bottom: 1px solid $base-ui-color;
+}
+
+dt {
+    color: $font-color-dark;
+    font-weight: 700;
+}
+
+th {
+    color: $font-color-dark;
+}
+
+/* Images */
+
+img {
+    max-width: 100%;
+}
+
+/*  */
+
+hr {
+    border: 0;
+    background: $base-ui-color;
+    height: 1px;
+    margin: 0 0 20px;
+}
+
+/* Forms */
+
+input[type=text],
+input[type=password],
+input[type=email],
+textarea {
+    border: 1px solid $ui-color;
+    padding: $base-padding/3 $base-padding/2;
+
+    &:focus {
+        border: 1px solid $ui-color-dark;
+        outline: 2px solid $brand-color;
+    }
+}
+
+abbr[title] {
+    border-bottom: 0;
+}
