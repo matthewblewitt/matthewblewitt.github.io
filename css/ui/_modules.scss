@@ -76,37 +76,135 @@
     background: $ui-color-lighter;
 }
 
-/* ACCORDION */ 
+/* Accordion */ 
 
 .accordion {
     margin: 0 0 $base-margin 0;
+    border: 1px solid $ui-color;
+}
 
-    dt, dd {
-        padding: $base-padding/2;
-        border: 1px solid $ui-color;
-        border-bottom: 0;
+.accordion__header {
+    padding: $base-padding/2;
+    position:relative;
+    border-top: 1px solid $ui-color;
 
-        &:last-of-type {
-            border-bottom: 1px solid $ui-color;
-        }
-
-        a {
-            display: block;
-            color: $font-color;;
-            font-weight: bold;
-            text-decoration: none;
-        }
+    a {
+        display: block;
+        color: $font-color;;
+        font-weight: bold;
+        text-decoration: none;
     }
 
-    dd {
-        border-top: 0;
-        &:last-of-type {
-            border-top: 1px solid $ui-color-lighter;
-            position: relative;
-            top: -1px;
-        }
+    &:nth-child(1) {
+        border-top: none;
+    }
+
+    &:before {
+        position: absolute;
+        content: "+";
+        line-height: 5px;
+        text-align: center;
+        margin-top:-7px;
+        top:50%;
+        right:10px;
+        width:14px;
+        height:14px;
+        z-index: 10;
+    } 
+}
+
+.accordion__header.active { 
+    &:before {
+        content:"-";        
     }
 }
+
+.accordion__content {
+    padding: $base-padding/2;
+}
+
+/* Tabs */
+
+.tabs {
+  
+  border: 1px solid $ui-color;
+  margin-bottom: $base-margin;
+  
+  > .tabs__content {
+    display: none;
+    padding: 1em;
+    position: relative;
+    border-top: 1px solid $ui-color;
+  }
+  > .active {
+    display: block;
+  }
+}
+
+.tabs__nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    display: inline-block;
+    padding: 0;
+    border-right: 1px solid $ui-color;
+    border-bottom: 0;
+   
+  }
+  a {
+    display:block;
+    text-decoration: none;
+    padding: .5em;
+    &.active {
+      position: relative;
+    }
+  }
+  @media (max-width: 700px) {
+    ul {
+      border-bottom: 0;
+      overflow: hidden;
+      position: relative;
+      background: #fff; /* fallback */
+ 
+      &::after {
+        content: "☰";
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        z-index: 2;
+        pointer-events: none;
+      }
+      &.open {
+        a {
+          position: relative;
+          display: block;
+        }
+      }
+    }
+    li {
+      display: block;
+      border: 0;
+    }
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      &.active {
+        border: 0;
+        z-index: 1;
+        background: #fff;
+      }
+    }
+  }
+}
+
+
+
 
 .demo {
     box-shadow: 1px 1px 10px;

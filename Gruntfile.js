@@ -59,13 +59,13 @@ module.exports = function(grunt) {
         livereload: true,
       },
 
-      js: {
-        files: 'js/**/*.js',
-        tasks: ['jshint'],
-        options: {
-          spawn: false,
-        }
-      },
+      // js: {
+      //   files: 'js/**/*.js',
+      //   tasks: ['jshint'],
+      //   options: {
+      //     spawn: false,
+      //   }
+      // },
 
       css: {
         //directory path and it's subdirectories,

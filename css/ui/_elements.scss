@@ -51,10 +51,11 @@ pre {
     background: $ui-color-light;
     border-radius: $brand-round;
     border: 1px solid $base-ui-color;
-    overflow-x: auto;
+    overflow: hidden;
+    white-space: pre;
 }
 
-pre {
+.html-snippet pre {
     display: none;
 }
 

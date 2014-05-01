@@ -10,14 +10,15 @@ body {
 }
 
 .wrapper {
-    max-width: 960px;
     margin: 0 auto;
+    position: relative;
     @extend .cf;
 }
 
 .pattern-wrapper {
     width: 66.666%;
     float: right;
+    padding-right: $base-padding;
 
     @include breakpoint(alpha){
         float: none;

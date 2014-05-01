@@ -155,6 +155,24 @@ title: Homepage
         </section>
 
         <section class="pattern">
+            <h2><a name="address" class="anchor" href="#address"><span class="octicon octicon-link"></span></a>Address</h2>
+            <div class="html-snippet">
+                <address>
+                    Article by <a title="Posts by Jack Osborne" href="#">Jack Osborne</a>
+                </address>                    
+            </div>
+        </section>
+
+        <section class="pattern">
+            <h2><a name="time" class="anchor" href="#time"><span class="octicon octicon-link"></span></a>Time</h2>
+            <div class="html-snippet">
+                <address>
+                    <time>2011-11-12 14:54</time>
+                </address>                    
+            </div>
+        </section>
+
+        <section class="pattern">
             <h2><a name="link" class="anchor" href="#link"><span class="octicon octicon-link"></span></a>Link</h2>
             <div class="html-snippet">
                 <p><a href="#" title="Some info about the destination">Link</a>
@@ -474,6 +492,13 @@ title: Homepage
             </div>
         </section>
 
+        <section class="pattern">
+            <h2><a name="progress" class="anchor" href="#progress"><span class="octicon octicon-link"></span></a>Progress</h2>
+            <div class="html-snippet">
+                <p>Progress: <progress> <span id="p">20</span>% </progress> </p>
+            </div>
+        </section>
+
     </div>
     <!-- end #forms -->
 
@@ -537,19 +562,88 @@ title: Homepage
         <section class="pattern">
             <h2><a name="accordion" class="anchor" href="#accordion"><span class="octicon octicon-link"></span></a>Accordion</h2>
             <div class="html-snippet">
-                <dl class="accordion">
-                    <dt><a href="">Panel 1</a></dt>
-                    <dd>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</dd>
-                    <dt><a href="">Panel 2</a></dt>
-                    <dd>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</dd>
-                    <dt><a href="">Panel 3</a></dt>
-                    <dd>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</dd>
-                </dl>
+                <div class="js-accordion accordion">
+                    <div class="accordion__header"><a href="#">Panel 1</a></div>
+                    <div class="accordion__content">Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</div>
+                    <div class="accordion__header"><a href="#">Panel 2</a></div>
+                    <div class="accordion__content">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</div>
+                </div>
             </div>
+        </section>
+
+        <section class="pattern">
+            <h2><a name="hcard" class="anchor" href="#hcard"><span class="octicon octicon-link"></span></a>Microformat hCard</h2>
+            <div class="html-snippet">
+                <p class="vcard">
+
+                    <a class="fn org" href="http://www.w3.org/Consortium/contact-keio" title="Contact Information for W3C/Keio">
+                        <span class="organization-name">University of Leeds</span>
+                        
+                    </a>
+
+                    <span class="adr">
+
+                        <a class="extended-address" href="http://www.keio.ac.jp/english/about_keio/campus_info/sfc1.html">University of Leeds</a>
+                       
+                        <span class="street-address">Street Name</span>, 
+
+                        <span class="locality">Leeds</span>,
+                        
+                        <span class="region">West Yorkshire</span> 
+                        <span class="postal-code">LS2 9JT</span> 
+
+                        <b class="country">UK</b>
+
+                        <span class="tel">Telephone: 
+                            <span class="value">+44 (0) 113 243 1751</span>
+                        </span>
+                        <span class="tel">
+                            <span class="type">Fax</span>: 
+                            <span class="value">+44 (0) 113 244 3923</span>
+                        </span>
+                    </span>
+                </p>
+            </div>
+        </section>
+
+        <section class="pattern">
+            <h2><a name="tabs" class="anchor" href="#tabs"><span class="octicon octicon-link"></span></a>Tabs</h2>
+
+            <div class="html-snippet">
+
+                <div class="tabs">
+                  
+                    <nav role='navigation' class="tabs__nav">
+                        <ul>
+                          <li><a href="#tab-1" class="active">Tab 1</a></li>
+                          <li><a href="#tab-2">Tab 2</a></li>
+                          <li><a href="#tab-3">Tab 3</a></li>
+                        </ul>
+                    </nav>
+
+                    <div id="tab-1" class="tabs__content active">
+                        <h3>Tab 1</h3>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad cum non iure magnam dolores earum nemo quo tempora ab unde! 
+                    </div>
+
+                    <div id="tab-2" class="tabs__content">
+                        <h3>Tab 2</h3>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur est natus esse minima nihil quidem tenetur alias pariatur.
+                    </div>
+
+                    <div id="tab-3" class="tabs__content">
+                        <h3>Tab 3</h3>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores numquam cupiditate aliquam quisquam repellendus fugit eaque asperiores voluptatem ut accusamus soluta corporis in facere quae provident itaque magni eum repellat ducimus dolore.
+                    </div>
+                      
+                </div>
+
+            </div>
+            
         </section>
 
     </div>
     <!-- end #widgets -->
 
-
 </div>
+

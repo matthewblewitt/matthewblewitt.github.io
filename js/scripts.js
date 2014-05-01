@@ -89,26 +89,102 @@ $('pre').each(function() {
 
 // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-//Simple accordion
-(function($) {
-    var allPanels = $('.accordion > dd').hide();
+//Accordion
+function accordion(name){
+    $(name + ' > .accordion__content').hide(); //Hide all accordion content
 
-    $('.accordion > dt > a').click(function() {
-        allPanels.slideUp(200);
-        $(this).parent().next().slideDown(200);
+    $(name + ' > .accordion__header a').click(function(){
+
+        var $this = $(this);
+        var $target = $this.closest('.accordion__header').next(); //Target the accordion__content of clicked link
+
+        if (!$target.hasClass('active')) { //If target not active
+            $(name + ' .accordion__content').removeClass('active').slideUp(); //Hide everything
+            $(name + ' .accordion__header').removeClass('active');
+            $target.addClass('active').slideDown(); //Showcontent & accordion
+            $this.closest('.accordion__header').addClass('active');
+        } else { //else hide all
+            $target.removeClass('active').slideUp();
+            $this.closest('.accordion__header').removeClass('active');
+        }
+
         return false;
+
     });
+}
+
+// Responsive Tabs
+
+var Tabs = {
+
+    init: function () {
+        this.bindUIfunctions();
+        this.pageLoadCorrectTab();
+    },
+
+    bindUIfunctions: function () {
+
+        // Delegation
+        $(document)
+            .on("click", ".tabs__nav a[href^='#']:not('.active')", function (event) {
+                Tabs.changeTab(this.hash);
+                event.preventDefault();
+            })
+            .on("click", ".tabs__nav a.active", function (event) {
+                Tabs.toggleMobileMenu(event, this);
+                event.preventDefault();
+            });
+
+    },
+
+    changeTab: function (hash) {
+
+        var anchor = $("[href=" + hash + "]");
+        var div = $(hash);
+
+        // activate correct anchor (visually)
+        anchor.addClass("active").parent().siblings().find("a").removeClass("active");
+
+        // activate correct div (visually)
+        div.addClass("active").siblings().removeClass("active");
+
+        // update URL, no history addition
+        // You'd have this active in a real situation, but it causes issues in an <iframe> (like here on CodePen) in Firefox. So commenting out.
+        // window.history.replaceState("", "", hash);
+
+        // Close menu, in case mobile
+        anchor.closest("ul").removeClass("open");
+
+    },
+
+    // If the page has a hash on load, go to that tab
+    pageLoadCorrectTab: function () {
+        this.changeTab(document.location.hash);
+    },
+
+    toggleMobileMenu: function (event, el) {
+        $(el).closest("ul").toggleClass("open");
+    }
+
+}
+
+Tabs.init();
+
+//Tooltip 
+
+(function($) {
+
+    accordion(".accordion");
 
     $('.tooltip').tooltipster();
+
 })(jQuery);
-
-
 
 // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
 //Smooth scroll effect
 $(function() {
-    $('a[href*=#]:not([href=#])').bind("click", function() {
+    $('#main_navigation a[href*=#]:not([href=#])').bind("click", function() {
         var offsetTop = 0;
         $('.active-pattern').removeClass('active-pattern');
         var thisLink = $(this).attr("href");
