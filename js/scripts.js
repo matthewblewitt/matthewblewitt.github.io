@@ -184,7 +184,7 @@ Tabs.init();
 
 //Smooth scroll effect
 $(function() {
-    $('#main_navigation a[href*=#]:not([href=#])').bind("click", function() {
+    $('.slicknav_nav a[href*=#]:not([href=#])').bind("click", function() {
         var offsetTop = 0;
         $('.active-pattern').removeClass('active-pattern');
         var thisLink = $(this).attr("href");
